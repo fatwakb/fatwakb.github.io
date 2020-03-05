@@ -44,7 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<label for="drop" class="toggle">Menu</label>
 				<input type="checkbox" id="drop">
 				<ul class="menu">
-					<li class="mr-lg-4 mr-3 active"><a href="index.html">Tentang</a></li>
+					<li class="mr-lg-4 mr-3 active"><a href="#about">Tentang</a></li>
 					<li class="mr-lg-4 mr-3"><a href="#services" class="scroll">Jasa</a></li>
 					<li class="mr-lg-4 mr-3"><a href="#work" class="scroll">Portofolio</a></li>
 					<li><a href="#contact" class="scroll">Kontak</a></li>
@@ -68,7 +68,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="advantage_left">
                              <h1 class="heading text-capitalize mb-sm-5 mb-4">Hi. Saya <span>Fatwa Kurnia Budiman.</span></h1>
 							<p class="mt-4">Saya adalah lulusan S1-Teknik Informatika yang mendalami bidang <span>pengembangan perangkat lunak</span> dan berspesialisasi dalam aplikasi berbasis web.</p>
-							<a href="#services" class="banner-button btn mt-5 scroll">What i do</a>
+							<a href="#services" class="banner-button btn mt-5 scroll">Pelajari yang saya kerjakan</a>
 						</div>
                     </div>
                 </div>
@@ -76,9 +76,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
     </section>
 
-	<div class="agileits-services" id="services">
+	<div class="agileits-services">
 		<div class="container">
-		   <h2 class="heading text-capitalize"> Services </h2>
+		   <h2 class="heading text-capitalize" id="services"> Jasa </h2>
 		   <p class="subs mt-4">Proin ac fermentum est. Cras mi ipsum, consectetur.</p>
             <div class="agileits-services-row row pt-md-5 pb-5  text-center">
                 <div class="col-lg-4">
@@ -86,7 +86,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                        <span class="fa fa-code"></span>
                         <h4 class="mt-4 mb-4">Consectetur</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum inventore consectetur. </p>
-                       
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -105,14 +104,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
             </div>
 			<p class="subs mb-4">Proin ac fermentum est. Cras mi ipsum, consectetur?</p>
-			<a href="#work" class="banner-button btn">My recent work</a>
+			<a href="#work" class="banner-button btn">Pekerjaan terbaru saya</a>
     	</div>
 	</div>
 	<!-- works -->
 
-	<section class="news text-center" id="work">
+	<section class="news text-center">
 		<div class="container">
-			<h3 class="heading text-capitalize"> My works </h3>
+			<h3 class="heading text-capitalize" id="work"> Pekerjaan saya </h3>
 		   	<p class="subs mt-4">Proin ac fermentum est. Cras mi ipsum, consectetur.</p>
 			<div class="row news-grids mt-5">
 				<div class="col-lg-4 col-md-6 newsgrid1">
@@ -175,12 +174,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //works -->
 
 	<!-- contact -->
-	<section class="wedo" id="contact">
+	<section class="wedo">
 		<div class="container">
-			<h3 class="heading text-capitalize text-white text-center"> Contact </h3>
+			<h3 class="heading text-capitalize text-white text-center" id="contact"> Kontak </h3>
 			<p class="subs mt-4 text-center">Proin ac fermentum est. Cras mi ipsum, consectetur.</p>
 			<div class="contact_grid_right mt-5 mx-auto text-center">
-				<form action="#" method="post">
+				<!-- <form action="#" method="post">
 					<div class="row contact_top">
 						<div class="col-sm-6">
 							<input type="text" name="Name" placeholder="Name" required="">
@@ -194,18 +193,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="submit" value="Send Message">
 					<input type="reset" value="Clear Form">
 					<div class="clearfix"> </div>
-				</form>
+				</form> -->
+
+				<div id="disqus_thread"></div>
+				<script>
+					var disqus_config = function() {
+						this.page.url = 'fatwakb.github.io';
+						this.page.identifier = '666';
+					};
+					(function() {
+						var d = document, s = d.createElement('script');
+						s.src = 'https://fatwakb.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+					})();
+				</script>
+				<noscript>
+					Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+				</noscript>
+				<script id="dsq-count-scr" src="//fatwakb.disqus.com/count.js" async></script>
 			</div>
 			<div class="cpy-right text-center">
 			<div class="follow">
 				<ul class="social_section_1info">
-					<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-					<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-					<li><a href="#"><span class="fa fa-google"></span></a></li>
-					<li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-					
-					<li><a href="#"><span class="fa fa-vimeo"></span></a></li>
-					<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+					<li><a target="__blank" href="https://www.facebook.com/fatwa.kurnia.budiman"><span class="fa fa-facebook"></span></a></li>
+					<li><a target="__blank" href="https://twitter.com/fatwakb"><span class="fa fa-twitter"></span></a></li>
+					<li><a target="__blank" href="https://www.linkedin.com/in/fatwa-kurnia-budiman-645696141"><span class="fa fa-linkedin"></span></a></li>
 				</ul>
 			</div>
 				<p>© 2018 Exclusive. All rights reserved | Design by
