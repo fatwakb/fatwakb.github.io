@@ -53,30 +53,14 @@
     to { transform: translateX(0px) rotate(1deg); }
   }
 </style>
-<script src="../cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.core.min.js"></script>
+<script src="howler.core.min.js"></script>
 <script src="index.js" defer></script>
 <body>
 
-  <video autoplay loop id="vidbg">
+  <video muted autoplay loop id="vidbg">
     <source src="mist.mp4" type="video/mp4">
     <source src="mist.ogg" type="video/ogg">
   </video>
-
-<!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
-<script>
-  (function(f, a, t, h, o, m){
-    a[h]=a[h]||function(){
-      (a[h].q=a[h].q||[]).push(arguments)
-    };
-    o=f.createElement('script'),
-    m=f.getElementsByTagName('script')[0];
-    o.async=1; o.src=t; o.id='fathom-script';
-    m.parentNode.insertBefore(o,m)
-  })(document, window, '../stats.michaelguidetti.info/tracker.js', 'fathom');
-  fathom('set', 'siteId', 'EGIIJ');
-  fathom('trackPageview');
-  </script>
-  <!-- / Fathom -->
 
 </body>
 
