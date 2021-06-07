@@ -203,6 +203,50 @@ http://www.tooplate.com/view/2109-the-card
                       <a href="img/08.png">View more</a>
                     </figcaption>
                   </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/09.png" alt="Image 1" class="" />
+                    <figcaption>
+                      <h2>
+                        Cash
+                        <span>Request</span>
+                      </h2>
+                      <p>Cash Request System.</p>
+                      <a href="img/09.png">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/10.png" alt="Pretty Girl" class="" />
+                    <figcaption>
+                      <h2>
+                        Cash
+                        <span>Request</span>
+                      </h2>
+                      <p>Cash Request System.</p>
+                      <a href="img/10.png">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/11.png" alt="Red Flowers" class="" />
+                    <figcaption>
+                      <h2>
+                        Cash
+                        <span>Request</span>
+                      </h2>
+                      <p>Cash Request System.</p>
+                      <a href="img/11.png">View more</a>
+                    </figcaption>
+                  </figure>
+                  <figure class="effect-goliath tm-gallery-item">
+                    <img src="img/12.png" alt="Stairs" class="" />
+                    <figcaption>
+                      <h2>
+                        Cash
+                        <span>Request</span>
+                      </h2>
+                      <p>Cash Request System.</p>
+                      <a href="img/12.png">View more</a>
+                    </figcaption>
+                  </figure>
                 </div>
               </section>
 
@@ -440,7 +484,7 @@ http://www.tooplate.com/view/2109-the-card
         let contact_message = $('#contact_message').val();
         if(contact_name != '' && contact_email != '' && contact_message != '') {
           let text = encodeURI(contact_name+' ('+contact_email+'), '+contact_message);
-          window.open('https://wa.me/send?phone=6282113396221&text=' + text, '_blank');
+          window.open('https://api.whatsapp.com/send?phone=6282113396221&text=' + text, '_blank');
         } else {
           alert('All fields are required');
         }
