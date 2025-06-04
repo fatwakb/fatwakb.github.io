@@ -1,613 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fatwa Kurnia Budiman - Software Engineer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Ganti dengan versi MUI yang tersedia tanpa CORS -->
+    <script src="https://cdn.jsdelivr.net/npm/@mui/material@5.14.5/umd/material-ui.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emotion/react@11.11.1/dist/emotion-react.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emotion/styled@11.11.0/dist/emotion-styled.umd.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+        }
 
-  <title>Fatwa Kurnia Budiman</title>
-  <!--
-Template 2109 The Card
-http://www.tooplate.com/view/2109-the-card
--->
-  <!-- load CSS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" />
-  <!-- Google web font "Open Sans" -->
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <!-- https://getbootstrap.com/ -->
-  <link rel="stylesheet" href="slick/slick.css" />
-  <link rel="stylesheet" href="slick/slick-theme.css" />
-  <link rel="stylesheet" href="css/magnific-popup.css" />
-  <link rel="stylesheet" href="css/tooplate-style.css" />
-  <!-- Templatemo style -->
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Loader -->
-  <div id="loader-wrapper">
-    <div id="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-  </div>
+    <div id="root"></div>
+    <script type="text/javascript">
+        const {
+            Box, Container, Typography, Avatar, Chip, Stack, Paper, List, ListItem, Link
+        } = MaterialUI;
 
-  <div class="tm-main-container">
-    <div class="tm-top-container">
-      <!-- Menu -->
-      <nav id="tmNav" class="tm-nav">
-        <a class="tm-navbar-menu" href="#">Menu</a>
-        <ul class="tm-nav-links">
-          <li class="tm-nav-item active">
-            <a href="#" data-linkid="0" data-align="right" class="tm-nav-link">Intro</a>
-          </li>
-          <li class="tm-nav-item">
-            <a href="#" data-linkid="1" data-align="right" class="tm-nav-link">About</a>
-          </li>
-          <li class="tm-nav-item">
-            <a href="#" data-linkid="2" data-align="middle" class="tm-nav-link">Work</a>
-          </li>
-          <li class="tm-nav-item">
-            <a href="#" data-linkid="3" data-align="left" class="tm-nav-link">Contact</a>
-          </li>
-          <li class="tm-nav-item">
-            <a href="#" data-linkid="4" data-align="right" class="tm-nav-link">My Resume</a>
-          </li>
-        </ul>
-      </nav>
+        const skills = [
+            'PHP', 'JavaScript', 'MySQL', 'Git', 'REST API', 'CodeIgniter', 'Laravel',
+            'ReactJS', 'React Native', 'NextJS'
+        ];
 
-      <!-- Site header -->
-      <header class="tm-site-header-box tm-bg-dark">
-        <h1 class="tm-site-title">Greetings,</h1>
-        <p class="mb-0 tm-site-subtitle">I’m here to introduce myself.</p>
-      </header>
-    </div>
-    <!-- tm-top-container -->
+        const projects = [
+            { title: 'Document Management System', description: 'Sistem pengelolaan dokumen digital untuk efisiensi organisasi.' },
+            { title: 'eProcurement System', description: 'Platform pengadaan barang dan jasa secara online.' },
+            { title: 'Cash Request System', description: 'Sistem pengajuan dana berbasis web.' },
+            { title: 'eBudget System', description: 'Aplikasi manajemen anggaran instansi.' },
+            { title: 'Study Agenda System', description: 'Platform jadwal dan pelaporan kegiatan studi.' },
+            { title: 'Halal Integration System', description: 'Sistem integrasi data halal antar lembaga.' },
+            { title: 'Non Conformity Report System', description: 'Sistem pelaporan dan penanganan ketidaksesuaian yang terintegrasi untuk meningkatkan kualitas dan kepatuhan operasional dalam organisasi.' },
+            { title: 'Support Ticket System', description: 'Platform manajemen tiket dukungan IT yang efisien, memungkinkan departemen IT untuk menerima, mengelola, dan menyelesaikan permintaan bantuan dengan lebih cepat dan terorganisir.' }
+        ];
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <!-- Site content -->
-          <div class="tm-content">
-            <!-- Section 0 Introduction -->
-            <section class="tm-section tm-section-0">
-              <h2 class="tm-section-title mb-3 font-weight-bold">
-                Introduction
-              </h2>
-              <div class="tm-textbox tm-bg-dark">
-                <p>
-                  My name is Fatwa Kurnia Budiman.
-                  I graduated in 2018 from Gunadarma University majoring in informatics engineering.
-                </p>
-                <p>
-                  I work as a software engineer. As a software engineer, i use computer science principles to develop
-                  software solutions that will satisfy the wants and needs of businesses and consumers.
-                </p>
-              </div>
-              <a href="#" id="tm_about_link" data-linkid="1" class="tm-link">Read More</a>
-            </section>
+        function ProfilFatwaBudiman() {
+            return React.createElement(Box, { sx: { bgcolor: '#0f172a', color: '#f8fafc', minHeight: '100vh', py: 4 } },
+                React.createElement(Container, { maxWidth: 'md' },
+                    React.createElement(Box, { textAlign: 'center', mb: 4 },
+                        React.createElement(Avatar, {
+                            sx: { bgcolor: '#3b82f6', width: 100, height: 100, fontSize: 32, mx: 'auto', mb: 2 }
+                        }, 'FKB'),
+                        React.createElement(Typography, { variant: 'h4', fontWeight: 800 }, 'Fatwa Kurnia Budiman'),
+                        React.createElement(Typography, { variant: 'subtitle1', color: 'text.secondary' }, 'Software Engineer - Jakarta, Indonesia')
+                    ),
 
-            <!-- Section 1 About Me -->
-            <section class="tm-section tm-section-1">
-              <div class="tm-textbox tm-textbox-2 tm-bg-dark">
-                <h2 class="tm-text-blue mb-4">About Me</h2>
-                <p>
-                  I was born in Jakarta, on June 7th 1996 and grew up in Bekasi.
-                  As for my family, I am the fourth of five children.
-                </p>
-                <p>
-                  I create many types of solutions such as desktop and web applications, mobile apps, games, etc.
-                  If you want to know more about it, I am ready to talk with you.
-                </p>
-                <p>
-                  That’s an introduction from me. Thank you very much.
-                </p>
-                <a href="#" id="tm_work_link" data-linkid="2" class="tm-link m-0">Next</a>
-              </div>
-            </section>
+                    React.createElement(Box, { mb: 4 },
+                        React.createElement(Typography, { variant: 'h6', gutterBottom: true }, 'Tentang Saya'),
+                        React.createElement(Typography, null,
+                            'Saya adalah seorang Software Engineer dengan pengalaman dalam pengembangan aplikasi web, integrasi sistem, dan implementasi solusi digital untuk kebutuhan perusahaan dan pemerintahan. Saya memiliki semangat dalam membangun sistem yang efisien, scalable, dan user-friendly.')
+                    ),
 
-            <!-- Section 2 Work (Gallery) -->
-            <section class="tm-section tm-section-2 mx-auto">
-              <div class="grid tm-gallery">
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover02.png" alt="Image 1" class="" />
-                  <figcaption>
-                    <h2>
-                      Document
-                      <span>System</span>
-                    </h2>
-                    <p>Document Management System.</p>
-                    <a href="img/01.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover02.png" alt="Pretty Girl" class="" />
-                  <figcaption>
-                    <h2>
-                      Document
-                      <span>System</span>
-                    </h2>
-                    <p>Document Management System.</p>
-                    <a href="img/02.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover02.png" alt="Red Flowers" class="" />
-                  <figcaption>
-                    <h2>
-                      Document
-                      <span>System</span>
-                    </h2>
-                    <p>Document Management System.</p>
-                    <a href="img/03.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover02.png" alt="Stairs" class="" />
-                  <figcaption>
-                    <h2>
-                      Document
-                      <span>System</span>
-                    </h2>
-                    <p>Document Management System.</p>
-                    <a href="img/04.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Image 1" class="" />
-                  <figcaption>
-                    <h2>
-                      Electronic
-                      <span>Procurement</span>
-                    </h2>
-                    <p>eProcurement System.</p>
-                    <a href="img/05.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Pretty Girl" class="" />
-                  <figcaption>
-                    <h2>
-                      Electronic
-                      <span>Procurement</span>
-                    </h2>
-                    <p>eProcurement System.</p>
-                    <a href="img/06.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Red Flowers" class="" />
-                  <figcaption>
-                    <h2>
-                      Electronic
-                      <span>Procurement</span>
-                    </h2>
-                    <p>eProcurement System.</p>
-                    <a href="img/07.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Stairs" class="" />
-                  <figcaption>
-                    <h2>
-                      Electronic
-                      <span>Procurement</span>
-                    </h2>
-                    <p>eProcurement System.</p>
-                    <a href="img/08.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Image 1" class="" />
-                  <figcaption>
-                    <h2>
-                      Cash
-                      <span>Request</span>
-                    </h2>
-                    <p>Cash Request System.</p>
-                    <a href="img/09.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Pretty Girl" class="" />
-                  <figcaption>
-                    <h2>
-                      Cash
-                      <span>Request</span>
-                    </h2>
-                    <p>Cash Request System.</p>
-                    <a href="img/10.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Red Flowers" class="" />
-                  <figcaption>
-                    <h2>
-                      Cash
-                      <span>Request</span>
-                    </h2>
-                    <p>Cash Request System.</p>
-                    <a href="img/11.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Stairs" class="" />
-                  <figcaption>
-                    <h2>
-                      Cash
-                      <span>Request</span>
-                    </h2>
-                    <p>Cash Request System.</p>
-                    <a href="img/12.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Image 1" class="" />
-                  <figcaption>
-                    <h2>
-                      Electronic
-                      <span>Budget</span>
-                    </h2>
-                    <p>eBudget System.</p>
-                    <a href="img/13.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Pretty Girl" class="" />
-                  <figcaption>
-                    <h2>
-                      Electronic
-                      <span>Budget</span>
-                    </h2>
-                    <p>eBudget System.</p>
-                    <a href="img/14.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Red Flowers" class="" />
-                  <figcaption>
-                    <h2>
-                      Electronic
-                      <span>Budget</span>
-                    </h2>
-                    <p>eBudget System.</p>
-                    <a href="img/15.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover01.png" alt="Stairs" class="" />
-                  <figcaption>
-                    <h2>
-                      Electronic
-                      <span>Budget</span>
-                    </h2>
-                    <p>eBudget System.</p>
-                    <a href="img/16.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover03.png" alt="Stairs" class="" />
-                  <figcaption>
-                    <h2>
-                      Study
-                      <span>Agenda</span>
-                    </h2>
-                    <p>Study Agenda System.</p>
-                    <a href="img/17.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover03.png" alt="Stairs" class="" />
-                  <figcaption>
-                    <h2>
-                      Study
-                      <span>Agenda</span>
-                    </h2>
-                    <p>Study Agenda System.</p>
-                    <a href="img/18.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover04.png" alt="Stairs" class="" />
-                  <figcaption>
-                    <h2>
-                      Halal
-                      <span>Integration</span>
-                    </h2>
-                    <p>Halal Integration System.</p>
-                    <a href="img/19.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover04.png" alt="Stairs" class="" />
-                  <figcaption>
-                    <h2>
-                      Halal
-                      <span>Integration</span>
-                    </h2>
-                    <p>Halal Integration System.</p>
-                    <a href="img/20.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover04.png" alt="Stairs" class="" />
-                  <figcaption>
-                    <h2>
-                      Halal
-                      <span>Integration</span>
-                    </h2>
-                    <p>Halal Integration System.</p>
-                    <a href="img/21.png">View more</a>
-                  </figcaption>
-                </figure>
-                <figure class="effect-goliath tm-gallery-item">
-                  <img src="img/cover04.png" alt="Stairs" class="" />
-                  <figcaption>
-                    <h2>
-                      Halal
-                      <span>Integration</span>
-                    </h2>
-                    <p>Halal Integration System.</p>
-                    <a href="img/22.png">View more</a>
-                  </figcaption>
-                </figure>
-              </div>
-              <br>
-              <a href="#" id="tm_contact_link" data-linkid="3" class="tm-link m-0">Interested?</a>
-            </section>
+                    React.createElement(Box, { mb: 4 },
+                        React.createElement(Typography, { variant: 'h6', gutterBottom: true }, 'Keahlian'),
+                        React.createElement(Stack, { direction: 'row', spacing: 1, flexWrap: 'wrap' },
+                            skills.map(skill => React.createElement(Chip, {
+                                key: skill,
+                                label: skill,
+                                color: 'primary',
+                                variant: 'outlined'
+                            }))
+                        )
+                    ),
 
-            <!-- Section 3 Contact -->
-            <section class="tm-section tm-section-3 tm-section-left">
-              <form id="send" class="tm-contact-form">
-                <div class="form-group mb-4">
-                  <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"
-                    required />
-                </div>
-                <div class="form-group mb-4">
-                  <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email"
-                    required />
-                </div>
-                <div class="form-group mb-4">
-                  <textarea rows="4" id="contact_message" name="contact_message" class="form-control"
-                    placeholder="Message" required></textarea>
-                </div>
-                <div class="form-group mb-0">
-                  <button class="btn tm-send-btn tm-fl-right" onclick="doSend()">
-                    Send
-                  </button>
-                </div>
-              </form>
-              <br>
-              <a href="#" id="tm_resume_link" data-linkid="4" class="tm-link m-0">Check my resume</a>
-            </section>
+                    React.createElement(Box, { mb: 4 },
+                        React.createElement(Typography, { variant: 'h6', gutterBottom: true }, 'Proyek Unggulan'),
+                        React.createElement(List, null,
+                            projects.map((proj, idx) =>
+                                React.createElement(ListItem, { key: idx, disableGutters: true },
+                                    React.createElement(Paper, { sx: { p: 2, width: '100%' } },
+                                        React.createElement(Typography, { variant: 'subtitle1', fontWeight: 600 }, proj.title),
+                                        React.createElement(Typography, { variant: 'body2', color: 'text.secondary' }, proj.description)
+                                    )
+                                )
+                            )
+                        )
+                    ),
 
-            <!-- Section 4 Contact -->
-            <section class="tm-section tm-section-4 tm-section-right">
-              <iframe width="100%" src="https://docs.google.com/gview?url=https://fatwakb.github.io/Resume-Fatwa-Kurnia-Budiman.pdf&embedded=true"></iframe>
-              <br>
-              <a class="tm-link m-0" target="__blank" href="Resume-Fatwa-Kurnia-Budiman.pdf">
-                Open
-              </a>
-            </section>
-          </div>
-        </div>
-      </div>
-    </div>
+                    React.createElement(Box, { mb: 4 },
+                        React.createElement(Typography, { variant: 'h6', gutterBottom: true }, 'Hal iseng yang sedang saya kerjakan (PDF)'),
+                        React.createElement("iframe", {
+                            src: "cryptocurrency_price_prediction.pdf", // Pastikan file ini tersedia di folder yang sama
+                            title: "Cryptocurrency Price Prediction"
+                        })
+                    ),
 
-    <div class="tm-bottom-container">
-      <!-- Barcode -->
-      <div class="tm-barcode-box">
-        <img src="img/qrcode.png" alt="Qr code" />
-      </div>
+                    React.createElement(Box, null,
+                        React.createElement(Typography, { variant: 'h6', gutterBottom: true }, 'Kontak'),
+                        React.createElement(Typography, null, 'Email: ',
+                            React.createElement(Link, { href: 'mailto:fatwa.kurnia.budiman@gmail.com', color: 'secondary' }, 'fatwa.kurnia.budiman@gmail.com')
+                        ),
+                        React.createElement(Typography, null, 'LinkedIn: ',
+                            React.createElement(Link, { href: 'https://www.linkedin.com/in/fatwa-kurnia-budiman-645696141/', target: '_blank', color: 'secondary' }, 'Profil LinkedIn')
+                        )
+                    ),
 
-      <!-- Footer -->
-      <footer>
-        &nbsp;
-      </footer>
-    </div>
-  </div>
-
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <script src="js/background.cycle.js"></script>
-  <script src="slick/slick.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script>
-    let slickInitDone = false;
-    let previousImageId = 0,
-      currentImageId = 0;
-    let pageAlign = "right";
-    let bgCycle;
-    let links;
-    let eachNavLink;
-
-    window.onload = function () {
-      $("body").addClass("loaded");
-    };
-
-    function navLinkClick(e) {
-      if ($(e.target).hasClass("external")) {
-        return;
-      }
-
-      e.preventDefault();
-
-      if ($(e.target).data("align")) {
-        pageAlign = $(e.target).data("align");
-      }
-
-      // Change bg image
-      previousImageId = currentImageId;
-      currentImageId = $(e.target).data("linkid");
-      bgCycle.cycleToNextImage(previousImageId, currentImageId);
-
-      // Change menu item highlight
-      $(`.tm-nav-item:eq(${previousImageId})`).removeClass("active");
-      $(`.tm-nav-item:eq(${currentImageId})`).addClass("active");
-
-      // Change page content
-      $(`.tm-section-${previousImageId}`).fadeOut(function (e) {
-        $(`.tm-section-${currentImageId}`).fadeIn();
-        // Gallery
-        if (currentImageId === 2) {
-          setupSlider();
-        }
-      });
-
-      adjustFooter();
-    }
-
-    $(document).ready(function () {
-      // Set first page
-      $(".tm-section").fadeOut(0);
-      $(".tm-section-0").fadeIn();
-
-      // Set Background images
-      // https://www.jqueryscript.net/slideshow/Simple-jQuery-Background-Image-Slideshow-with-Fade-Transitions-Background-Cycle.html
-      bgCycle = $("body").backgroundCycle({
-        imageUrls: [
-          "https://source.unsplash.com/collection/" + Math.floor(900000 * Math.random()) + 100000 +
-          "/1920x1280",
-          "https://source.unsplash.com/collection/" + Math.floor(900000 * Math.random()) + 100000 +
-          "/1920x1280",
-          "https://source.unsplash.com/collection/" + Math.floor(900000 * Math.random()) + 100000 +
-          "/1920x1280",
-          "https://source.unsplash.com/collection/" + Math.floor(900000 * Math.random()) + 100000 +
-          "/1920x1280"
-        ],
-        fadeSpeed: 2000,
-        duration: -1,
-        backgroundSize: SCALING_MODE_COVER
-      });
-
-      eachNavLink = $(".tm-nav-link");
-      links = $(".tm-nav-links");
-
-      // "Menu" open/close
-      if (links.hasClass("open")) {
-        links.fadeIn(0);
-      } else {
-        links.fadeOut(0);
-      }
-
-      $("#tm_about_link").on("click", navLinkClick);
-      $("#tm_work_link").on("click", navLinkClick);
-      $("#tm_contact_link").on("click", navLinkClick);
-      $("#tm_resume_link").on("click", navLinkClick);
-
-      // Each menu item click
-      eachNavLink.on("click", navLinkClick);
-
-      $(".tm-navbar-menu").click(function (e) {
-        if (links.hasClass("open")) {
-          links.fadeOut();
-        } else {
-          links.fadeIn();
+                    React.createElement(Box, { textAlign: 'center', mt: 6, color: 'text.secondary' },
+                        React.createElement(Typography, { variant: 'body2' }, '© 2025 Fatwa Kurnia Budiman. Dibuat dengan semangat dan kode.')
+                    )
+                )
+            );
         }
 
-        links.toggleClass("open");
-      });
-
-      // window resize
-      $(window).resize(function () {
-        // If current page is Gallery page, set it up
-        if (currentImageId === 2) {
-          setupSlider();
-        }
-
-        // Adjust footer
-        adjustFooter();
-      });
-
-      adjustFooter();
-    }); // DOM is ready
-
-    function adjustFooter() {
-      const windowHeight = $(window).height();
-      const topHeight = $(".tm-top-container").height();
-      const middleHeight = $(".tm-content").height();
-      let contentHeight = topHeight + middleHeight;
-
-      if (pageAlign === "left") {
-        contentHeight += $(".tm-bottom-container").height();
-      }
-
-      if (contentHeight > windowHeight) {
-        $(".tm-bottom-container").addClass("tm-static");
-      } else {
-        $(".tm-bottom-container").removeClass("tm-static");
-      }
-    }
-
-    function setupSlider() {
-      let slidesToShow = 4;
-      let slidesToScroll = 2;
-      let windowWidth = $(window).width();
-
-      if (windowWidth < 480) {
-        slidesToShow = 1;
-        slidesToScroll = 1;
-      } else if (windowWidth < 768) {
-        slidesToShow = 2;
-        slidesToScroll = 1;
-      } else if (windowWidth < 992) {
-        slidesToShow = 3;
-        slidesToScroll = 2;
-      }
-
-      if (slickInitDone) {
-        $(".tm-gallery").slick("unslick");
-      }
-
-      slickInitDone = true;
-
-      $(".tm-gallery").slick({
-        dots: true,
-        customPaging: function (slider, i) {
-          var thumb = $(slider.$slides[i]).data();
-          return `<a>${i + 1}</a>`;
-        },
-        infinite: false,
-        prevArrow: false,
-        nextArrow: false,
-        slidesToShow: slidesToShow,
-        slidesToScroll: slidesToScroll
-      });
-
-      // Open big image when a gallery image is clicked.
-      $(".slick-list").magnificPopup({
-        delegate: "a",
-        type: "image",
-        gallery: {
-          enabled: true
-        }
-      });
-    }
-
-    function doSend() {
-      let contact_name = $('#contact_name').val();
-      let contact_email = $('#contact_email').val();
-      let contact_message = $('#contact_message').val();
-      if (contact_name != '' && contact_email != '' && contact_message != '') {
-        let text = encodeURI(contact_name + ' (' + contact_email + '), ' + contact_message);
-        window.open('https://api.whatsapp.com/send?phone=6282113396221&text=' + text, '_blank');
-      } else {
-        alert('All fields are required');
-      }
-
-    }
-  </script>
-
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-      Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/6149856b25797d7a890002b7/1fg3j2buh';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(ProfilFatwaBudiman));
+    </script>
 </body>
 
 </html>
